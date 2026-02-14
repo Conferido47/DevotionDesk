@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevotionDesk Study Suite Mockup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/mockup.css">
+</head>
+<body>
+    <header class="mockup-header">
+        <div class="brand">DEVOTIONDESK</div>
+        <nav>
+            <a href="#desktop">Desktop</a>
+            <a href="#compact">Compact</a>
+            <a href="#components">Components</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <p class="pill">Study Suite Concept</p>
+            <h1>Mocking up the DevotionDesk dual-study ritual.</h1>
+            <p>This conceptual board illustrates how the EGW PDF viewer, Bible reader, and luminous notes desk co-exist within a single immersive pane. Treatments echo the flagship landing page while introducing instrumentation for focus rituals.</p>
+        </section>
+
+        <section class="board" id="desktop">
+            <div class="board-meta">
+                <p class="pill">1440px desktop grid</p>
+                <h2>Three-panel sanctum</h2>
+                <p>Luxurious split layout: WebView2-powered EGW PDF on the left, JSON Bible in the center, devotion ledger on the right. Brass accents, splitters, and focus states keep the ritual legible.</p>
+            </div>
+            <div class="board-frame board-desktop" aria-label="Desktop mockup">
+                <div class="panel pdf">
+                    <div class="panel-head">
+                        <span>EGW Reader</span>
+                        <div class="controls">
+                            <span class="chip">DOC · Steps to Christ</span>
+                            <span class="chip">Pg 34</span>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="page-ghost">
+                            <div class="page-title">Chapter 3 · Rejoicing</div>
+                            <div class="paragraph shimmer"></div>
+                            <div class="paragraph shimmer short"></div>
+                            <div class="paragraph shimmer"></div>
+                        </div>
+                        <div class="toolbar">
+                            <button>⟲</button>
+                            <button>⟳</button>
+                            <button>−</button>
+                            <span class="meta">125%</span>
+                            <button>＋</button>
+                            <span class="meta">12 / 180</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel bible">
+                    <div class="panel-head">
+                        <span>Bible JSON Stream</span>
+                        <div class="controls">
+                            <span class="chip">KJV</span>
+                        </div>
+                    </div>
+                    <div class="selector">
+                        <span>Book</span>
+                        <div>Isaiah ⌄</div>
+                        <span>Chapter</span>
+                        <div>43 ⌄</div>
+                    </div>
+                    <div class="verses">
+                        <article>
+                            <header>Isaiah 43:1</header>
+                            <p>Fear not: for I have redeemed thee, I have called thee by thy name; thou art mine.</p>
+                            <div class="actions">
+                                <span class="chip">link to notes</span>
+                                <span class="chip">copy</span>
+                            </div>
+                        </article>
+                        <article class="active">
+                            <header>Isaiah 43:2</header>
+                            <p>When thou passest through the waters, I will be with thee; and through the rivers, they shall not overflow thee.</p>
+                            <div class="actions">
+                                <span class="chip">linked · Pg 34</span>
+                            </div>
+                        </article>
+                        <article>
+                            <header>Isaiah 43:3</header>
+                            <p>For I am the Lord thy God, the Holy One of Israel, thy Saviour...</p>
+                        </article>
+                    </div>
+                </div>
+                <div class="panel notes">
+                    <div class="panel-head">
+                        <span>Devotion Ledger</span>
+                        <div class="controls">
+                            <span class="chip">Autosave · 02:14</span>
+                        </div>
+                    </div>
+                    <div class="note-context">
+                        <span class="chip">Isaiah 43:2</span>
+                        <span class="chip">Steps to Christ · Pg 34</span>
+                    </div>
+                    <div class="note-sheet">
+                        <p>Water becomes a motif of refinement. Call out texture of “stillness amid currents.”</p>
+                        <p class="ghost-line"></p>
+                        <p class="ghost-line short"></p>
+                    </div>
+                    <div class="note-actions">
+                        <button>Save</button>
+                        <button>Export</button>
+                        <button class="ghost">Focus mode</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="board board-alt" id="compact">
+            <div class="board-meta">
+                <p class="pill">Tablet &amp; compact</p>
+                <h2>Stacked serenity</h2>
+                <p>Panels collapse into tabs; timeline drawers tuck beneath notes to keep context intact on smaller canvases.</p>
+            </div>
+            <div class="board-frame board-compact" aria-label="Compact mockup">
+                <div class="tabs">
+                    <span class="tab active">EGW</span>
+                    <span class="tab">Bible</span>
+                    <span class="tab">Notes</span>
+                </div>
+                <div class="stack">
+                    <div class="stack-card">PDF panel preview</div>
+                    <div class="stack-card">Bible panel preview</div>
+                    <div class="stack-card">Notes panel preview</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="board" id="components">
+            <div class="board-meta">
+                <p class="pill">Component spotlights</p>
+                <h2>Micro-states &amp; tokens</h2>
+                <p>Detailing the controls keeps development aligned with the intended tactility: shimmering verse cards, brass pill chips, and toasted confirmation banners.</p>
+            </div>
+            <div class="component-grid">
+                <article>
+                    <h3>Verse card</h3>
+                    <p class="subtitle">Playfair Display 18px · glow border</p>
+                    <div class="component-card verse">
+                        <header>Isaiah 43:2</header>
+                        <p>When thou passest through the waters, I will be with thee.</p>
+                        <span class="chip">Active state</span>
+                    </div>
+                </article>
+                <article>
+                    <h3>Toolbar buttons</h3>
+                    <p class="subtitle">Gold gradient · 12px x 18px padding</p>
+                    <div class="component-card toolbar-set">
+                        <button>−</button>
+                        <button>100%</button>
+                        <button>＋</button>
+                    </div>
+                </article>
+                <article>
+                    <h3>Note toast</h3>
+                    <p class="subtitle">Floating pill · 300ms fade</p>
+                    <div class="component-card toast">Saved to Devotion Ledger</div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        Conceptual mockup · DevotionDesk Atelier · Crafted for reference only
+    </footer>
+</body>
+</html>

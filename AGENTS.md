@@ -28,3 +28,5 @@
   2. Styles live in `style/` and HTML remains clean/semantic.
   3. Interactive elements receive accessible labels/focus states.
   4. Deliverable summary + suggested next steps returned to the user.
+
+When i  say run checkpoint run checkpoint.md inside the commands folder
