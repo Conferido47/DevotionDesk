@@ -1,0 +1,46 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Neutral-grey dark theme -->
+
+    <!-- Core surfaces -->
+    <SolidColorBrush x:Key="BgApp"      Color="#FF121316"/>
+    <SolidColorBrush x:Key="BgCard"     Color="#FF181A1F"/>
+    <SolidColorBrush x:Key="BgCardSoft" Color="#FF1F2228"/>
+    <SolidColorBrush x:Key="BorderSoft" Color="#2EFFFFFF"/>
+
+    <!-- Text -->
+    <SolidColorBrush x:Key="TextMain"  Color="#FFF1F3F6"/>
+    <SolidColorBrush x:Key="TextMuted" Color="#FFB6BEC9"/>
+    <SolidColorBrush x:Key="TextBold"  Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="TextSoft"  Color="#FF9AA4B2"/>
+
+    <!-- Accent: neutral (not purple) -->
+    <SolidColorBrush x:Key="AccentBrush"   Color="#FFD7DADF"/>
+    <SolidColorBrush x:Key="AccentPrimary" Color="#FF767C85"/>
+    <SolidColorBrush x:Key="OnAccent"      Color="#FFF1F3F6"/>
+
+    <!-- UI fills -->
+    <SolidColorBrush x:Key="HoverFill"     Color="#26FFFFFF"/>
+    <SolidColorBrush x:Key="SelectionFill" Color="#2AFFFFFF"/>
+
+    <!-- Window caption fills (a bit stronger than regular hover) -->
+    <SolidColorBrush x:Key="CaptionHoverFill"   Color="#33FFFFFF"/>
+    <SolidColorBrush x:Key="CaptionPressedFill" Color="#4AFFFFFF"/>
+
+    <!-- Inputs -->
+    <SolidColorBrush x:Key="InputBg"     Color="#FF1A1C22"/>
+    <SolidColorBrush x:Key="InputBorder" Color="#33FFFFFF"/>
+
+    <!-- Scrollbars -->
+    <SolidColorBrush x:Key="ScrollTrackBg"     Color="#14000000"/>
+    <SolidColorBrush x:Key="ScrollThumb"       Color="#88FFFFFF"/>
+    <SolidColorBrush x:Key="ScrollThumbHover"  Color="#B3FFFFFF"/>
+    <SolidColorBrush x:Key="ScrollThumbDrag"   Color="#E0FFFFFF"/>
+    <SolidColorBrush x:Key="ScrollButtonBg"    Color="#14000000"/>
+
+    <!-- Window caption buttons -->
+    <SolidColorBrush x:Key="CloseHoverFill"   Color="#44FF5C4D"/>
+    <SolidColorBrush x:Key="ClosePressedFill" Color="#66FF5C4D"/>
+
+</ResourceDictionary>

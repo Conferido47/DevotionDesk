@@ -1,0 +1,46 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Dirty-beige light theme (easy on eyes) -->
+
+    <!-- Core surfaces -->
+    <SolidColorBrush x:Key="BgApp"      Color="#FFF1E8DC"/>
+    <SolidColorBrush x:Key="BgCard"     Color="#FFF8F1E7"/>
+    <SolidColorBrush x:Key="BgCardSoft" Color="#FFF3EBDD"/>
+    <SolidColorBrush x:Key="BorderSoft" Color="#1E000000"/>
+
+    <!-- Text (super dark brown) -->
+    <SolidColorBrush x:Key="TextMain"  Color="#FF1E140E"/>
+    <SolidColorBrush x:Key="TextMuted" Color="#FF5E5248"/>
+    <SolidColorBrush x:Key="TextBold"  Color="#FF140C07"/>
+    <SolidColorBrush x:Key="TextSoft"  Color="#FF75675C"/>
+
+    <!-- Accent: ash grey-brown (less blue) -->
+    <SolidColorBrush x:Key="AccentBrush"   Color="#FFB09A86"/>
+    <SolidColorBrush x:Key="AccentPrimary" Color="#FFB09A86"/>
+    <SolidColorBrush x:Key="OnAccent"      Color="#FF1F1B16"/>
+
+    <!-- UI fills -->
+    <SolidColorBrush x:Key="HoverFill"     Color="#12000000"/>
+    <SolidColorBrush x:Key="SelectionFill" Color="#1A000000"/>
+
+    <!-- Window caption fills (a bit stronger than regular hover) -->
+    <SolidColorBrush x:Key="CaptionHoverFill"   Color="#1F000000"/>
+    <SolidColorBrush x:Key="CaptionPressedFill" Color="#2B000000"/>
+
+    <!-- Inputs -->
+    <SolidColorBrush x:Key="InputBg"     Color="#FFEDE3D5"/>
+    <SolidColorBrush x:Key="InputBorder" Color="#2A000000"/>
+
+    <!-- Scrollbars -->
+    <SolidColorBrush x:Key="ScrollTrackBg"     Color="#24000000"/>
+    <SolidColorBrush x:Key="ScrollThumb"       Color="#A0000000"/>
+    <SolidColorBrush x:Key="ScrollThumbHover"  Color="#B8000000"/>
+    <SolidColorBrush x:Key="ScrollThumbDrag"   Color="#D0000000"/>
+    <SolidColorBrush x:Key="ScrollButtonBg"    Color="#00000000"/>
+
+    <!-- Window caption buttons -->
+    <SolidColorBrush x:Key="CloseHoverFill"   Color="#33C13A2D"/>
+    <SolidColorBrush x:Key="ClosePressedFill" Color="#55C13A2D"/>
+
+</ResourceDictionary>

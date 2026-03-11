@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+
+    <AssemblyName>DevotionDesk</AssemblyName>
+    <Authors>Justin Conferido</Authors>
+    <Company>Justin Conferido</Company>
+    <Copyright>Copyright (c) 2026 Justin Conferido</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\Montserrat-wght.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3650.58" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="PdfViewer\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Montserrat-wght.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
