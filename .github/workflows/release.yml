@@ -1,0 +1,59 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Publish (self-contained)
+        run: dotnet publish "DevotionDesk/DevotionDesk.csproj" -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -o "artifacts/publish"
+
+      - name: Zip portable build
+        shell: pwsh
+        run: |
+          $tag = "${env:GITHUB_REF_NAME}"
+          $ver = $tag.TrimStart('v')
+          $zip = "artifacts/DevotionDesk-$ver-win-x64.zip"
+          if (Test-Path $zip) { Remove-Item $zip -Force }
+          Compress-Archive -Path "artifacts/publish/*" -DestinationPath $zip
+
+      - name: Install Inno Setup
+        shell: pwsh
+        run: |
+          choco install innosetup -y --no-progress
+
+      - name: Build installer (Inno Setup)
+        shell: pwsh
+        run: |
+          $tag = "${env:GITHUB_REF_NAME}"
+          $ver = $tag.TrimStart('v')
+          $env:APP_VERSION = $ver
+          $env:PUBLISH_DIR = (Resolve-Path "artifacts/publish").Path
+          & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" "installer\DevotionDesk.iss"
+          New-Item -ItemType Directory -Force -Path artifacts | Out-Null
+          Get-ChildItem -Path . -Filter "DevotionDesk-Setup-$ver.exe" -Recurse | ForEach-Object {
+            Copy-Item $_.FullName -Destination "artifacts\$($_.Name)" -Force
+          }
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            artifacts/*.zip
+            artifacts/*.exe

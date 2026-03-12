@@ -40,3 +40,12 @@ MIT (see `LICENSE`).
 ## Third-Party Notices
 
 See `THIRD_PARTY_NOTICES.md`.
+
+## Installer / Releases
+
+When a version tag like `v0.1.0` is pushed, GitHub Actions builds:
+
+- A portable zip (self-contained)
+- A Windows installer (Inno Setup)
+
+You can download them from the GitHub Releases page.
