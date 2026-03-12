@@ -13,15 +13,17 @@ internal static class Program
     private static int Main(string[] args)
     {
         // Usage:
-        // dotnet run --project tools/IconGen/IconGen.csproj -- <svgPath> <icoOutPath>
+        // dotnet run --project tools/IconGen/IconGen.csproj -- <svgPath> <outPath> [size]
+        // - outPath: .ico or .png
+        // - size: optional (only used for .png), e.g. 56
         if (args.Length < 2)
         {
-            Console.Error.WriteLine("Usage: IconGen <svgPath> <icoOutPath>");
+            Console.Error.WriteLine("Usage: IconGen <svgPath> <outPath> [size]");
             return 2;
         }
 
         var svgPath = args[0];
-        var icoPath = args[1];
+        var outPath = args[1];
 
         if (!File.Exists(svgPath))
         {
@@ -36,15 +38,34 @@ internal static class Program
             return 4;
         }
 
-        // Common icon sizes.
-        var sizes = new[] { 16, 32, 48, 64, 128, 256 };
-        var pngBlobs = sizes.Select(s => RenderPng(drawing, s, s)).ToList();
+        var ext = Path.GetExtension(outPath).ToLowerInvariant();
+        if (ext == ".ico")
+        {
+            // Common icon sizes.
+            var sizes = new[] { 16, 32, 48, 64, 128, 256 };
+            var pngBlobs = sizes.Select(s => RenderPng(drawing, s, s)).ToList();
 
-        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(icoPath))!);
-        WriteIco(icoPath, sizes, pngBlobs);
+            Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath))!);
+            WriteIco(outPath, sizes, pngBlobs);
+            Console.WriteLine($"Wrote: {outPath}");
+            return 0;
+        }
 
-        Console.WriteLine($"Wrote: {icoPath}");
-        return 0;
+        if (ext == ".png")
+        {
+            var size = 128;
+            if (args.Length >= 3 && int.TryParse(args[2], out var parsed) && parsed > 0 && parsed <= 2048)
+                size = parsed;
+
+            var bytes = RenderPng(drawing, size, size);
+            Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath))!);
+            File.WriteAllBytes(outPath, bytes);
+            Console.WriteLine($"Wrote: {outPath}");
+            return 0;
+        }
+
+        Console.Error.WriteLine("Unsupported output extension. Use .ico or .png");
+        return 5;
     }
 
     private static DrawingGroup? LoadSvgDrawing(string svgPath)
