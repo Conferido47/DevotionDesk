@@ -27,7 +27,7 @@ Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
 UninstallDisplayIcon={app}\\{#MyAppExeName}
-SetupIconFile=
+SetupIconFile={#SourcePath}\\..\\DevotionDesk\\Assets\\DevotionDesk.ico
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"

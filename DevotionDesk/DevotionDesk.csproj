@@ -11,11 +11,14 @@
     <Authors>Justin Conferido</Authors>
     <Company>Justin Conferido</Company>
     <Copyright>Copyright (c) 2026 Justin Conferido</Copyright>
+
+    <ApplicationIcon>Assets\DevotionDesk.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Fonts\Montserrat-wght.ttf" />
     <None Remove="Assets\DevotionDeskLogo.svg" />
+    <None Remove="Assets\DevotionDesk.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +37,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\DevotionDeskLogo.svg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\DevotionDesk.ico">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

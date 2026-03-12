@@ -8,10 +8,12 @@
         xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
         mc:Ignorable="d"
         Title="DevotionDesk"
+        Icon="pack://application:,,,/Assets/DevotionDesk.ico"
         Height="720"
         Width="1403"
         WindowStyle="None"
         ResizeMode="CanResize"
+        Background="Transparent"
         UseLayoutRounding="True"
         SnapsToDevicePixels="True"
         WindowStartupLocation="CenterScreen">
@@ -485,7 +487,11 @@
     </Window.Resources>
 
 
-    <Grid Background="{DynamicResource BgApp}">
+    <Border CornerRadius="12"
+            Background="{DynamicResource BgApp}"
+            SnapsToDevicePixels="True"
+            ClipToBounds="True">
+    <Grid Background="Transparent">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="44"/>
@@ -563,7 +569,7 @@
         </Border>
 
         <!-- App content -->
-        <Grid Grid.Row="1" Background="{DynamicResource BgApp}">
+        <Grid Grid.Row="1" Background="Transparent">
 
         <!-- MAIN COLUMNS -->
         <Grid.ColumnDefinitions>
@@ -585,9 +591,27 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0"
-                   Text="PDFs"
-                   Style="{StaticResource NavHeader}"/>
+                <DockPanel Grid.Row="0" LastChildFill="True">
+                    <Button x:Name="AddPdfButton"
+                            DockPanel.Dock="Right"
+                            Content="+"
+                            Width="34"
+                            Height="34"
+                            Margin="10,0,0,0"
+                            Padding="0"
+                            FontFamily="{StaticResource FontUIBold}"
+                            FontSize="18"
+                            Background="Transparent"
+                            BorderBrush="{DynamicResource BorderSoft}"
+                            BorderThickness="1"
+                            Foreground="{DynamicResource TextMain}"
+                            ToolTip="Add PDFs"
+                            Click="AddPdfButton_Click"/>
+
+                    <TextBlock Text="PDFs"
+                               VerticalAlignment="Center"
+                               Style="{StaticResource NavHeader}"/>
+                </DockPanel>
 
                 <TextBlock Grid.Row="1"
                    Text="Devotionals"
@@ -1269,4 +1293,5 @@
         </Grid>
         </Grid>
     </Grid>
+    </Border>
 </Window>

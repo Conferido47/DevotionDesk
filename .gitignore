@@ -2,6 +2,9 @@
 bin/
 obj/
 
+# Local artifacts
+artifacts/
+
 # Visual Studio
 .vs/
 *.user

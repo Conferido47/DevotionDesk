@@ -6,6 +6,7 @@
         xmlns:svgc="clr-namespace:SharpVectors.Converters;assembly=SharpVectors.Converters.Wpf"
         mc:Ignorable="d"
         Title="DevotionDesk"
+        Icon="pack://application:,,,/Assets/DevotionDesk.ico"
         Width="520"
         Height="320"
         WindowStartupLocation="CenterScreen"

@@ -19,6 +19,7 @@ using System.Windows.Input;
 using System.Windows.Documents;
 using System.Windows.Media;
 using System.Xml;
+using Microsoft.Win32;
 
 namespace DevotionDesk
 {
@@ -311,6 +312,72 @@ namespace DevotionDesk
             ReaderStatusText.Text = "Select a PDF on the left.";
 
             Loaded += MainWindow_Loaded;
+        }
+
+        private void AddPdfButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var dlg = new OpenFileDialog
+                {
+                    Title = "Add devotionals (PDF)",
+                    Filter = "PDF files (*.pdf)|*.pdf|All files (*.*)|*.*",
+                    Multiselect = true,
+                    CheckFileExists = true
+                };
+
+                if (dlg.ShowDialog(this) != true)
+                    return;
+
+                var addedAny = false;
+                foreach (var src in dlg.FileNames ?? Array.Empty<string>())
+                {
+                    if (string.IsNullOrWhiteSpace(src) || !File.Exists(src))
+                        continue;
+
+                    if (!string.Equals(Path.GetExtension(src), ".pdf", StringComparison.OrdinalIgnoreCase))
+                        continue;
+
+                    var dest = Path.Combine(_devotionalsFolder, Path.GetFileName(src));
+                    dest = GetAvailablePath(dest);
+
+                    File.Copy(src, dest, overwrite: false);
+                    addedAny = true;
+                }
+
+                if (!addedAny)
+                    return;
+
+                LoadPdfList();
+                ApplySort(SortCombo?.SelectedIndex ?? 0);
+            }
+            catch (Exception ex)
+            {
+                try
+                {
+                    MessageBox.Show(this, ex.Message, "Add PDFs", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch { }
+            }
+        }
+
+        private static string GetAvailablePath(string desiredPath)
+        {
+            if (!File.Exists(desiredPath))
+                return desiredPath;
+
+            var dir = Path.GetDirectoryName(desiredPath) ?? string.Empty;
+            var name = Path.GetFileNameWithoutExtension(desiredPath);
+            var ext = Path.GetExtension(desiredPath);
+
+            for (var i = 2; i < 1000; i++)
+            {
+                var candidate = Path.Combine(dir, $"{name} ({i}){ext}");
+                if (!File.Exists(candidate))
+                    return candidate;
+            }
+
+            return Path.Combine(dir, $"{name} ({Guid.NewGuid():N}){ext}");
         }
 
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
