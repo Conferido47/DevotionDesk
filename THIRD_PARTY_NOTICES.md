@@ -19,6 +19,14 @@ This project includes and/or depends on third-party components. Their licenses a
 - License file: `DevotionDesk/Fonts/Montserrat-OFL.txt`
 - Source: https://github.com/google/fonts/tree/main/ofl/montserrat
 
+## SharpVectors
+
+- Component: SVG rendering (WPF)
+- Package: `SharpVectors.Wpf`
+- License: BSD 3-Clause
+- License text: `licenses/SharpVectors-License.txt`
+- Notes: Used to display the bundled SVG logo in the custom title bar.
+
 ## Microsoft WebView2
 
 - Component: WebView2 (NuGet package used by the app)

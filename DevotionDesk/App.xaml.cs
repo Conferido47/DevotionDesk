@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Text.Json;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace DevotionDesk
@@ -16,8 +17,29 @@ namespace DevotionDesk
 
             ApplyThemeFromSettings();
 
+            ShutdownMode = ShutdownMode.OnExplicitShutdown;
+            _ = RunStartupSequenceAsync();
+        }
+
+        private async Task RunStartupSequenceAsync()
+        {
+            var splash = new SplashWindow();
+            splash.Show();
+
+            try
+            {
+                await splash.WaitForDoneAsync();
+            }
+            catch
+            {
+                // Best-effort: still proceed to main window.
+            }
+
+            try { splash.Close(); } catch { }
+
             var main = new MainWindow();
             MainWindow = main;
+            ShutdownMode = ShutdownMode.OnMainWindowClose;
             main.Show();
         }
 

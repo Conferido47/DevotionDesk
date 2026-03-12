@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        xmlns:svgc="clr-namespace:SharpVectors.Converters;assembly=SharpVectors.Converters.Wpf"
         xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
         mc:Ignorable="d"
         Title="DevotionDesk"
@@ -509,6 +510,11 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <svgc:SvgViewbox Width="28"
+                                     Height="28"
+                                     Margin="0,0,10,0"
+                                     IsHitTestVisible="False"
+                                     Source="pack://application:,,,/Assets/DevotionDeskLogo.svg" />
                     <TextBlock Text="{Binding Title, RelativeSource={RelativeSource AncestorType=Window}}"
                                FontFamily="{StaticResource FontUIBold}"
                                FontSize="14"

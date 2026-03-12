@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="sunGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E7B25A"/>
+      <stop offset="100%" stop-color="#B7782A"/>
+    </linearGradient>
+    <linearGradient id="pageGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5E7D1"/>
+      <stop offset="100%" stop-color="#E9D1AD"/>
+    </linearGradient>
+    <linearGradient id="coverGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#503012"/>
+      <stop offset="100%" stop-color="#8A4E18"/>
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D7C1A1" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#D7C1A1" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#D7C1A1" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#44502A"/>
+      <stop offset="100%" stop-color="#182112"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="1024" fill="none"/>
+
+  <!-- ground shadow -->
+  <ellipse cx="512" cy="620" rx="190" ry="20" fill="url(#shadowGrad)"/>
+  <path d="M420 600 C470 610, 554 610, 610 596 C650 586, 695 587, 730 600 C690 616, 350 620, 320 606 C350 600, 385 594, 420 600 Z"
+        fill="#DCC3A0" opacity="0.75"/>
+
+  <!-- sun -->
+  <path d="M388 448 C415 370, 485 332, 556 350 C613 364, 662 405, 688 453 L688 472 L388 472 Z" fill="url(#sunGrad)"/>
+
+  <!-- sun rays -->
+  <g stroke="#BE8338" stroke-linecap="round" opacity="0.95">
+    <line x1="512" y1="307" x2="512" y2="267" stroke-width="7"/>
+    <line x1="455" y1="319" x2="435" y2="286" stroke-width="5"/>
+    <line x1="571" y1="319" x2="591" y2="286" stroke-width="5"/>
+    <line x1="408" y1="354" x2="378" y2="330" stroke-width="5"/>
+    <line x1="618" y1="354" x2="648" y2="330" stroke-width="5"/>
+    <line x1="389" y1="412" x2="350" y2="399" stroke-width="6"/>
+    <line x1="638" y1="412" x2="677" y2="399" stroke-width="6"/>
+    <line x1="430" y1="331" x2="416" y2="295" stroke-width="5"/>
+    <line x1="596" y1="331" x2="610" y2="295" stroke-width="5"/>
+  </g>
+
+  <!-- leaves -->
+  <g transform="translate(226 392)">
+    <path d="M40 112 C5 78, 6 28, 57 6 C68 55, 78 104, 40 112 Z" fill="url(#leafGrad)"/>
+    <path d="M96 34 C73 1, 84 -39, 129 -56 C139 -8, 138 29, 96 34 Z" fill="url(#leafGrad)"/>
+    <path d="M120 104 C109 63, 133 22, 197 4 C176 53, 155 96, 120 104 Z" fill="url(#leafGrad)"/>
+    <path d="M8 178 C-19 154, -30 116, 8 91 C41 118, 59 156, 8 178 Z" fill="url(#leafGrad)"/>
+    <path d="M104 166 C69 154, 42 136, 28 108 C76 102, 123 120, 104 166 Z" fill="#4E5C31"/>
+    <g stroke="#F7F4EA" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9">
+      <path d="M42 105 C45 71, 49 42, 54 13"/>
+      <path d="M98 28 C111 3, 121 -20, 130 -48"/>
+      <path d="M122 98 C145 70, 163 40, 183 14"/>
+      <path d="M5 174 C11 145, 10 119, 8 97"/>
+    </g>
+    <path d="M58 118 C88 139, 117 170, 147 201" stroke="#334021" stroke-width="8" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- book shadow behind -->
+  <path d="M255 586 C347 580, 419 585, 512 596 C598 585, 684 581, 775 588 C736 603, 287 605, 255 586 Z" fill="#324124" opacity="0.95"/>
+
+  <!-- pages -->
+  <g>
+    <path d="M293 505 C348 448, 434 439, 508 499 C445 500, 385 505, 320 534 C308 525, 301 516, 293 505 Z" fill="#ECDCC3"/>
+    <path d="M731 505 C676 448, 590 439, 516 499 C579 500, 639 505, 704 534 C716 525, 723 516, 731 505 Z" fill="#ECDCC3"/>
+
+    <path d="M288 472 C385 449, 460 449, 512 566 C451 518, 387 493, 287 493 Z" fill="url(#pageGrad)"/>
+    <path d="M736 472 C639 449, 564 449, 512 566 C573 518, 637 493, 737 493 Z" fill="url(#pageGrad)"/>
+
+    <path d="M300 493 C390 474, 455 484, 512 566 C440 530, 374 525, 302 528 Z" fill="#F6EAD7"/>
+    <path d="M724 493 C634 474, 569 484, 512 566 C584 530, 650 525, 722 528 Z" fill="#F6EAD7"/>
+
+    <!-- page lines -->
+    <g stroke="#EAD6B7" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.95">
+      <path d="M338 503 C385 493, 430 496, 476 534"/>
+      <path d="M350 525 C395 518, 432 526, 467 548"/>
+      <path d="M364 546 C403 542, 437 548, 462 565"/>
+      <path d="M686 503 C639 493, 594 496, 548 534"/>
+      <path d="M674 525 C629 518, 592 526, 557 548"/>
+      <path d="M660 546 C621 542, 587 548, 562 565"/>
+    </g>
+
+    <!-- covers -->
+    <path d="M256 560 C345 551, 420 557, 500 578 C504 593, 505 598, 514 606 C426 600, 339 597, 255 576 Z" fill="url(#coverGrad)"/>
+    <path d="M768 560 C679 551, 604 557, 524 578 C520 593, 519 598, 510 606 C598 600, 685 597, 769 576 Z" fill="url(#coverGrad)"/>
+    <path d="M478 582 C489 590, 498 599, 512 616 C526 599, 535 590, 546 582 C548 603, 539 622, 512 628 C485 622, 476 603, 478 582 Z" fill="#2D1D0E"/>
+  </g>
+
+  <!-- bookmark -->
+  <path d="M438 544 L463 546 L453 605 L429 583 Z" fill="#B87925"/>
+</svg>
