@@ -1,6 +1,6 @@
 # DevotionDesk
 
-DevotionDesk is a Windows WPF app for reading devotionals (PDF) and reading/comparing Bible translations.
+DevotionDesk is a desktop devotional study app that combines a PDF devotional library with an integrated Bible reader, allowing users to read devotionals, explore Scripture, and compare Bible translations in one focused workspace.
 
 ## Features
 
