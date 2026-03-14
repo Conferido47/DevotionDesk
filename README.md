@@ -1,6 +1,6 @@
 # DevotionDesk
 
-DevotionDesk is a desktop devotional study app that combines a PDF devotional library with an integrated Bible reader, allowing users to read devotionals, explore Scripture, and compare Bible translations in one focused workspace.
+DevotionDesk is a desktop devotional study application that combines a PDF devotional library with an integrated Bible reader, allowing users to read devotionals, explore Scripture, and compare Bible translations within a focused and distraction-free workspace.
 
 ## Features
 
